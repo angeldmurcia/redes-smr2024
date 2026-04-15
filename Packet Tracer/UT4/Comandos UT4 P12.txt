@@ -1,0 +1,30 @@
+enable
+configure terminal
+vlan 2
+name PROFESOR
+exit
+vlan 3
+name ALUMNOS
+exit
+
+show vlan
+
+configure terminal
+interface fa0/1
+switchport access vlan 2
+exit
+interface fa0/2
+switchport access vlan 2
+exit
+interface fa0/3
+switchport access vlan 3
+exit
+interface fa0/4
+switchport access vlan 3
+exit
+interface fa0/5
+switchport access vlan 3
+exit
+exit
+
+show vlan

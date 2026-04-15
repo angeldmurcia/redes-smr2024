@@ -1,0 +1,19 @@
+En el Switch1
+enable
+configure terminal
+interface fa0/6
+switchport mode trunk
+
+En el Switch2
+enable
+configure terminal
+vlan 4
+name ALUMNOS2
+exit
+interface range FastEthernet 0/3 - 5
+switchport access vlan 4
+exit
+exit
+show vlan
+interface fa0/6
+switchport mode trunk
