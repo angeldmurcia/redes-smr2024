@@ -1,0 +1,32 @@
+CLI en el Router
+
+No
+
+enable
+configure terminal
+hostname R1
+interface fastEthernet 0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+interface fastEthernet 1/0
+ip address 192.168.15.1 255.255.255.0
+no shutdown
+exit
+
+ip dhcp excluded-address 192.168.1.1 192.168.1.4
+ip dhcp excluded-address 192.168.15.1 192.168.15.4            
+ip dhcp pool LAN1
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1
+dns-server 8.8.8.8
+exit
+
+ip dhcp pool LAN15
+network 192.168.15.0 255.255.255.0
+default-router 192.168.15.1
+dns-server 8.8.8.8
+exit
+
+Ahora en los PCs se cambia la configuración de estática a DHCP
